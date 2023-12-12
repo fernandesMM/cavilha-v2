@@ -2,7 +2,7 @@ import React, { ComponentProps, ReactElement } from "react";
 import { VariantProps, tv } from "tailwind-variants";
 
 const styles = tv({
-  base: 'flex items-center gap-2 rounded-md px-5 py-2 font-medium text-white',
+  base: 'flex items-center gap-2 rounded-md px-5 py-2 font-medium text-white max-w-min max-h-min',
   variants: {
       variant: {
           primary:
@@ -23,15 +23,15 @@ const styles = tv({
 
 export interface ButtonProps extends ComponentProps<'button'>, VariantProps<typeof styles>  {
   label: string | ReactElement;
-  variant: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary';
   size?: 'small' | 'medium' | 'large'
 }
 
 function Button({
   label,
   size = 'medium',
+  variant = 'primary',
   className,
-  variant,
   ...rest
 }: ButtonProps) {
   return (

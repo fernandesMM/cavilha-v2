@@ -21,6 +21,9 @@ const config: Config = {
 
         'background': '#191E24',
       },
+      padding: {
+        'small-1': '4px',
+      }
     }
   },
   plugins: []
